@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact AquaScope - GIS and Remote Sensing for Water Resource Management" />
+  <title>AquaScope | Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">AquaScope</h1>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </nav>
+  </header>
+
+  <main class="introduction">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to collaborate? Use the form below to get in touch with the AquaScope team.</p>
+    <form id="contactForm" class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="formMessage"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AquaScope. We look forward to hearing from you!</p>
+  </footer>
+  <script scr ="script.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const formMessage = document.getElementById("formMessage");
+
+      if (name === "" || email === "" || message === "") {
+        formMessage.textContent = "Please fill in all fields.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formMessage.textContent = "Please enter a valid email address.";
+        formMessage.style.color = "red";
+        return;
+      }
+
+      formMessage.textContent = "Thanks for reaching out! We’ll get back to you soon.";
+      formMessage.style.color = "green";
+
+      this.reset();
+    });
+  </script>
+</body>
+</html>
