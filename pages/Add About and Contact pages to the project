@@ -12,9 +12,9 @@
     <nav class="navbar">
       <h1 class="logo">AquaScope</h1>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/about.html" class="active">About</a></li>
-        <li><a href="pages/contact.html">Contact</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="menu-toggle" id="menuToggle">☰</div>
     </nav>
